@@ -33,4 +33,5 @@ RUN ash -c 'echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /
   && make install \
   && cd ../ \
   && rm -r postgis-$PGIS_VERSION \
-  && apk del .fetch-deps .build-deps
+  && apk del .fetch-deps .build-deps \
+  && find /usr/local -name '*.a' -delete
